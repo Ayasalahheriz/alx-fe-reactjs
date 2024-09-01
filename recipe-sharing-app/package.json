@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "zustand": "^4.2.0"  // Ensure this line is present
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -26,3 +27,4 @@
     "vite": "^5.4.1"
   }
 }
+
