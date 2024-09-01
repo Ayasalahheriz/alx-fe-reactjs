@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import useRecipeStore from '../recipeStore';
+import useRecipeStore from './recipeStore';
 import SearchBar from './SearchBar'; // Import the SearchBar component
 
 const RecipeList = () => {
