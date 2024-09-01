@@ -12,7 +12,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        {/* Home Route */}
         <Route path="/" element={<Home />} />
+        
+        {/* Profile Route with Nested Routes */}
         <Route 
           path="/profile" 
           element={
@@ -24,7 +27,11 @@ const App = () => {
           <Route index element={<ProfileDetails />} />
           <Route path="settings" element={<ProfileSettings />} />
         </Route>
+        
+        {/* Dynamic Routing for Blog Post */}
         <Route path="/post/:id" element={<BlogPost />} />
+        
+        {/* Catch-All Route for 404 Not Found */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
