@@ -1,23 +1,19 @@
-import React, { useEffect } from 'react';
-import useRecipeStore from './recipeStore';
-import SearchBar from './SearchBar'; // Import the SearchBar component
+import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import useRecipeStore from '../recipeStore'; // Adjust path as necessary
 
 const RecipeList = () => {
-  const { filteredRecipes, filterRecipes } = useRecipeStore(state => ({
+  const { filteredRecipes } = useRecipeStore(state => ({
     filteredRecipes: state.filteredRecipes,
-    filterRecipes: state.filterRecipes,
   }));
-
-  useEffect(() => {
-    filterRecipes(); // Ensure filtering happens when the component mounts
-  }, [filterRecipes]);
 
   return (
     <div>
-      <SearchBar /> {/* Add the SearchBar component */}
       {filteredRecipes.map(recipe => (
         <div key={recipe.id}>
-          <h3>{recipe.title}</h3>
+          <h3>
+            <Link to={`/recipes/${recipe.id}`}>{recipe.title}</Link> {/* Link to recipe details */}
+          </h3>
           <p>{recipe.description}</p>
           {/* Add EditRecipeForm and DeleteRecipeButton here */}
         </div>
